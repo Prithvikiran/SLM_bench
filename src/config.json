@@ -1,0 +1,35 @@
+{
+  "models": {
+    "small": [
+      {
+        "name": "Qwen2.5-1.5B-Instruct",
+        "hf_id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "ollama_model": "qwen2.5:1.5b-instruct",
+        "size": "1.5B"
+      }
+    ],
+    "medium": []
+  },
+  "runtimes": ["onnx_runtime"],
+  "quantizations": ["fp16"],
+  "workloads": [
+    "interactive_chat",
+    "structured_output",
+    "long_context"
+  ],
+  "experiments": {
+    "cold_start": true,
+    "warm_start": true,
+    "trials_per_config": 1
+  },
+  "output_dir": "./results",
+  "models_cache_dir": "./models",
+  "squad_dataset": "squad_v2",
+  "squad_samples": 20,
+  "windows_specific": {
+    "disable_windows_update": true,
+    "disable_defender": true,
+    "pin_cpu_cores": false,
+    "monitor_power_state": true
+  }
+}
